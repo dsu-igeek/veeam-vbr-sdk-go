@@ -28,12 +28,11 @@ type WindowsLocalStorageModel struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewWindowsLocalStorageModel(hostId string, repository WindowsLocalRepositorySettingsModel, mountServer MountServerSettingsModel, share SmbRepositoryShareSettingsModel) *WindowsLocalStorageModel {
+func NewWindowsLocalStorageModel(hostId string, repository WindowsLocalRepositorySettingsModel, mountServer MountServerSettingsModel) *WindowsLocalStorageModel {
 	this := WindowsLocalStorageModel{}
 	this.HostId = hostId
 	this.Repository = repository
 	this.MountServer = mountServer
-	this.Share = share
 	return &this
 }
 

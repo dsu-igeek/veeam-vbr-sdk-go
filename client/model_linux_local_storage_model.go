@@ -28,12 +28,11 @@ type LinuxLocalStorageModel struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewLinuxLocalStorageModel(hostId string, repository LinuxLocalRepositorySettingsModel, mountServer MountServerSettingsModel, share SmbRepositoryShareSettingsModel) *LinuxLocalStorageModel {
+func NewLinuxLocalStorageModel(hostId string, repository LinuxLocalRepositorySettingsModel, mountServer MountServerSettingsModel) *LinuxLocalStorageModel {
 	this := LinuxLocalStorageModel{}
 	this.HostId = hostId
 	this.Repository = repository
 	this.MountServer = mountServer
-	this.Share = share
 	return &this
 }
 

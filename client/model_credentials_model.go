@@ -13,7 +13,6 @@ package client
 
 import (
 	"encoding/json"
-	"time"
 	"fmt"
 )
 

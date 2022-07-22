@@ -27,9 +27,8 @@ type NfsStorageSpec struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewNfsStorageSpec(share NfsRepositoryShareSettingsModel, repository NetworkRepositorySettingsModel, mountServer MountServerSettingsModel, hostId string) *NfsStorageSpec {
+func NewNfsStorageSpec(share NfsRepositoryShareSettingsModel, repository NetworkRepositorySettingsModel, mountServer MountServerSettingsModel) *NfsStorageSpec {
 	this := NfsStorageSpec{}
-	this.HostId = hostId
 	this.Repository = repository
 	this.MountServer = mountServer
 	this.Share = share
