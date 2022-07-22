@@ -36,13 +36,13 @@ import (
 )
 
 func main() {
-    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format: *\\<version\\>-\\<revision\\>*.  (default to "1.0-rev1")
-    id := TODO // string | ID of the credentials record.
+    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format: *\\<version\\>-\\<revision\\>*.  (default to "1.0-rev2")
+    id := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | ID of the credentials record.
     credentialsPasswordChangeSpec := *openapiclient.NewCredentialsPasswordChangeSpec("Password_example") // CredentialsPasswordChangeSpec | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.CredentialsApi.ChangePasswordForCreds(context.Background(), id).XApiVersion(xApiVersion).CredentialsPasswordChangeSpec(credentialsPasswordChangeSpec).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.CredentialsApi.ChangePasswordForCreds(context.Background(), id).XApiVersion(xApiVersion).CredentialsPasswordChangeSpec(credentialsPasswordChangeSpec).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CredentialsApi.ChangePasswordForCreds``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -58,7 +58,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | [**string**](.md) | ID of the credentials record. | 
+**id** | **string** | ID of the credentials record. | 
 
 ### Other Parameters
 
@@ -67,7 +67,7 @@ Other parameters are passed through a pointer to a apiChangePasswordForCredsRequ
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format: *\\&lt;version\\&gt;-\\&lt;revision\\&gt;*.  | [default to &quot;1.0-rev1&quot;]
+ **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format: *\\&lt;version\\&gt;-\\&lt;revision\\&gt;*.  | [default to &quot;1.0-rev2&quot;]
 
  **credentialsPasswordChangeSpec** | [**CredentialsPasswordChangeSpec**](CredentialsPasswordChangeSpec.md) |  | 
 
@@ -110,13 +110,13 @@ import (
 )
 
 func main() {
-    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format: *\\<version\\>-\\<revision\\>*.  (default to "1.0-rev1")
-    id := TODO // string | ID of the credentials record.
+    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format: *\\<version\\>-\\<revision\\>*.  (default to "1.0-rev2")
+    id := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | ID of the credentials record.
     privateKeyChangeSpec := *openapiclient.NewPrivateKeyChangeSpec("PrivateKey_example") // PrivateKeyChangeSpec | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.CredentialsApi.ChangePrivateKeyForCreds(context.Background(), id).XApiVersion(xApiVersion).PrivateKeyChangeSpec(privateKeyChangeSpec).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.CredentialsApi.ChangePrivateKeyForCreds(context.Background(), id).XApiVersion(xApiVersion).PrivateKeyChangeSpec(privateKeyChangeSpec).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CredentialsApi.ChangePrivateKeyForCreds``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -132,7 +132,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | [**string**](.md) | ID of the credentials record. | 
+**id** | **string** | ID of the credentials record. | 
 
 ### Other Parameters
 
@@ -141,7 +141,7 @@ Other parameters are passed through a pointer to a apiChangePrivateKeyForCredsRe
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format: *\\&lt;version\\&gt;-\\&lt;revision\\&gt;*.  | [default to &quot;1.0-rev1&quot;]
+ **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format: *\\&lt;version\\&gt;-\\&lt;revision\\&gt;*.  | [default to &quot;1.0-rev2&quot;]
 
  **privateKeyChangeSpec** | [**PrivateKeyChangeSpec**](PrivateKeyChangeSpec.md) |  | 
 
@@ -184,13 +184,13 @@ import (
 )
 
 func main() {
-    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format: *\\<version\\>-\\<revision\\>*.  (default to "1.0-rev1")
-    id := TODO // string | ID of the credentials record.
+    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format: *\\<version\\>-\\<revision\\>*.  (default to "1.0-rev2")
+    id := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | ID of the credentials record.
     credentialsPasswordChangeSpec := *openapiclient.NewCredentialsPasswordChangeSpec("Password_example") // CredentialsPasswordChangeSpec | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.CredentialsApi.ChangeRootPasswordForCreds(context.Background(), id).XApiVersion(xApiVersion).CredentialsPasswordChangeSpec(credentialsPasswordChangeSpec).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.CredentialsApi.ChangeRootPasswordForCreds(context.Background(), id).XApiVersion(xApiVersion).CredentialsPasswordChangeSpec(credentialsPasswordChangeSpec).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CredentialsApi.ChangeRootPasswordForCreds``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -206,7 +206,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | [**string**](.md) | ID of the credentials record. | 
+**id** | **string** | ID of the credentials record. | 
 
 ### Other Parameters
 
@@ -215,7 +215,7 @@ Other parameters are passed through a pointer to a apiChangeRootPasswordForCreds
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format: *\\&lt;version\\&gt;-\\&lt;revision\\&gt;*.  | [default to &quot;1.0-rev1&quot;]
+ **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format: *\\&lt;version\\&gt;-\\&lt;revision\\&gt;*.  | [default to &quot;1.0-rev2&quot;]
 
  **credentialsPasswordChangeSpec** | [**CredentialsPasswordChangeSpec**](CredentialsPasswordChangeSpec.md) |  | 
 
@@ -258,12 +258,12 @@ import (
 )
 
 func main() {
-    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format: *\\<version\\>-\\<revision\\>*.  (default to "1.0-rev1")
-    credentialsSpec := *openapiclient.NewCredentialsSpec("Username_example", openapiclient.ECredentialsType("Standard")) // CredentialsSpec | 
+    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format: *\\<version\\>-\\<revision\\>*.  (default to "1.0-rev2")
+    credentialsSpec := openapiclient.CredentialsSpec{LinuxCredentialsSpec: openapiclient.NewLinuxCredentialsSpec()} // CredentialsSpec | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.CredentialsApi.CreateCreds(context.Background()).XApiVersion(xApiVersion).CredentialsSpec(credentialsSpec).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.CredentialsApi.CreateCreds(context.Background()).XApiVersion(xApiVersion).CredentialsSpec(credentialsSpec).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CredentialsApi.CreateCreds``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -284,7 +284,7 @@ Other parameters are passed through a pointer to a apiCreateCredsRequest struct 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format: *\\&lt;version\\&gt;-\\&lt;revision\\&gt;*.  | [default to &quot;1.0-rev1&quot;]
+ **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format: *\\&lt;version\\&gt;-\\&lt;revision\\&gt;*.  | [default to &quot;1.0-rev2&quot;]
  **credentialsSpec** | [**CredentialsSpec**](CredentialsSpec.md) |  | 
 
 ### Return type
@@ -326,12 +326,12 @@ import (
 )
 
 func main() {
-    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format: *\\<version\\>-\\<revision\\>*.  (default to "1.0-rev1")
-    id := TODO // string | ID of the credentials record.
+    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format: *\\<version\\>-\\<revision\\>*.  (default to "1.0-rev2")
+    id := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | ID of the credentials record.
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.CredentialsApi.DeleteCreds(context.Background(), id).XApiVersion(xApiVersion).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.CredentialsApi.DeleteCreds(context.Background(), id).XApiVersion(xApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CredentialsApi.DeleteCreds``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -347,7 +347,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | [**string**](.md) | ID of the credentials record. | 
+**id** | **string** | ID of the credentials record. | 
 
 ### Other Parameters
 
@@ -356,7 +356,7 @@ Other parameters are passed through a pointer to a apiDeleteCredsRequest struct 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format: *\\&lt;version\\&gt;-\\&lt;revision\\&gt;*.  | [default to &quot;1.0-rev1&quot;]
+ **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format: *\\&lt;version\\&gt;-\\&lt;revision\\&gt;*.  | [default to &quot;1.0-rev2&quot;]
 
 
 ### Return type
@@ -398,7 +398,7 @@ import (
 )
 
 func main() {
-    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format: *\\<version\\>-\\<revision\\>*.  (default to "1.0-rev1")
+    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format: *\\<version\\>-\\<revision\\>*.  (default to "1.0-rev2")
     skip := int32(56) // int32 | Number of credentials records to skip. (optional)
     limit := int32(56) // int32 | Maximum number of credentials records to return. (optional)
     orderColumn := openapiclient.ECredentialsFiltersOrderColumn("Username") // ECredentialsFiltersOrderColumn | Sorts credentials by one of the credentials parameters. (optional)
@@ -406,8 +406,8 @@ func main() {
     nameFilter := "nameFilter_example" // string | Filters credentials by the `nameFilter` pattern. The pattern can match any credentials parameter. To substitute one or more characters, use the asterisk (*) character at the beginning and/or at the end. (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.CredentialsApi.GetAllCreds(context.Background()).XApiVersion(xApiVersion).Skip(skip).Limit(limit).OrderColumn(orderColumn).OrderAsc(orderAsc).NameFilter(nameFilter).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.CredentialsApi.GetAllCreds(context.Background()).XApiVersion(xApiVersion).Skip(skip).Limit(limit).OrderColumn(orderColumn).OrderAsc(orderAsc).NameFilter(nameFilter).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CredentialsApi.GetAllCreds``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -428,7 +428,7 @@ Other parameters are passed through a pointer to a apiGetAllCredsRequest struct 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format: *\\&lt;version\\&gt;-\\&lt;revision\\&gt;*.  | [default to &quot;1.0-rev1&quot;]
+ **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format: *\\&lt;version\\&gt;-\\&lt;revision\\&gt;*.  | [default to &quot;1.0-rev2&quot;]
  **skip** | **int32** | Number of credentials records to skip. | 
  **limit** | **int32** | Maximum number of credentials records to return. | 
  **orderColumn** | [**ECredentialsFiltersOrderColumn**](ECredentialsFiltersOrderColumn.md) | Sorts credentials by one of the credentials parameters. | 
@@ -474,12 +474,12 @@ import (
 )
 
 func main() {
-    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format: *\\<version\\>-\\<revision\\>*.  (default to "1.0-rev1")
-    id := TODO // string | ID of the credentials record.
+    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format: *\\<version\\>-\\<revision\\>*.  (default to "1.0-rev2")
+    id := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | ID of the credentials record.
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.CredentialsApi.GetCreds(context.Background(), id).XApiVersion(xApiVersion).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.CredentialsApi.GetCreds(context.Background(), id).XApiVersion(xApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CredentialsApi.GetCreds``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -495,7 +495,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | [**string**](.md) | ID of the credentials record. | 
+**id** | **string** | ID of the credentials record. | 
 
 ### Other Parameters
 
@@ -504,7 +504,7 @@ Other parameters are passed through a pointer to a apiGetCredsRequest struct via
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format: *\\&lt;version\\&gt;-\\&lt;revision\\&gt;*.  | [default to &quot;1.0-rev1&quot;]
+ **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format: *\\&lt;version\\&gt;-\\&lt;revision\\&gt;*.  | [default to &quot;1.0-rev2&quot;]
 
 
 ### Return type
@@ -542,18 +542,17 @@ import (
     "context"
     "fmt"
     "os"
-    "time"
     openapiclient "./openapi"
 )
 
 func main() {
-    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format: *\\<version\\>-\\<revision\\>*.  (default to "1.0-rev1")
-    id := TODO // string | ID of the credentials record.
-    credentialsModel := *openapiclient.NewCredentialsModel("Id_example", "Username_example", "Description_example", openapiclient.ECredentialsType("Standard"), time.Now()) // CredentialsModel | 
+    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format: *\\<version\\>-\\<revision\\>*.  (default to "1.0-rev2")
+    id := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | ID of the credentials record.
+    credentialsModel := openapiclient.CredentialsModel{LinuxCredentialsModel: openapiclient.NewLinuxCredentialsModel()} // CredentialsModel | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.CredentialsApi.UpdateCreds(context.Background(), id).XApiVersion(xApiVersion).CredentialsModel(credentialsModel).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.CredentialsApi.UpdateCreds(context.Background(), id).XApiVersion(xApiVersion).CredentialsModel(credentialsModel).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CredentialsApi.UpdateCreds``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -569,7 +568,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | [**string**](.md) | ID of the credentials record. | 
+**id** | **string** | ID of the credentials record. | 
 
 ### Other Parameters
 
@@ -578,7 +577,7 @@ Other parameters are passed through a pointer to a apiUpdateCredsRequest struct 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format: *\\&lt;version\\&gt;-\\&lt;revision\\&gt;*.  | [default to &quot;1.0-rev1&quot;]
+ **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format: *\\&lt;version\\&gt;-\\&lt;revision\\&gt;*.  | [default to &quot;1.0-rev2&quot;]
 
  **credentialsModel** | [**CredentialsModel**](CredentialsModel.md) |  | 
 

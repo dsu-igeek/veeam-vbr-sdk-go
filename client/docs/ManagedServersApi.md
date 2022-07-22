@@ -33,12 +33,12 @@ import (
 )
 
 func main() {
-    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format: *\\<version\\>-\\<revision\\>*.  (default to "1.0-rev1")
-    managedServerSpec := *openapiclient.NewManagedServerSpec("Name_example", "Description_example", openapiclient.EManagedServerType("WindowsHost"), "CredentialsId_example") // ManagedServerSpec | 
+    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format: *\\<version\\>-\\<revision\\>*.  (default to "1.0-rev2")
+    managedServerSpec := openapiclient.ManagedServerSpec{LinuxHostSpec: openapiclient.NewLinuxHostSpec("SshFingerprint_example")} // ManagedServerSpec | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ManagedServersApi.CreateManagedServer(context.Background()).XApiVersion(xApiVersion).ManagedServerSpec(managedServerSpec).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ManagedServersApi.CreateManagedServer(context.Background()).XApiVersion(xApiVersion).ManagedServerSpec(managedServerSpec).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ManagedServersApi.CreateManagedServer``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -59,7 +59,7 @@ Other parameters are passed through a pointer to a apiCreateManagedServerRequest
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format: *\\&lt;version\\&gt;-\\&lt;revision\\&gt;*.  | [default to &quot;1.0-rev1&quot;]
+ **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format: *\\&lt;version\\&gt;-\\&lt;revision\\&gt;*.  | [default to &quot;1.0-rev2&quot;]
  **managedServerSpec** | [**ManagedServerSpec**](ManagedServerSpec.md) |  | 
 
 ### Return type
@@ -101,12 +101,12 @@ import (
 )
 
 func main() {
-    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format: *\\<version\\>-\\<revision\\>*.  (default to "1.0-rev1")
-    id := TODO // string | ID of the managed server.
+    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format: *\\<version\\>-\\<revision\\>*.  (default to "1.0-rev2")
+    id := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | ID of the managed server.
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ManagedServersApi.DeleteManagedServer(context.Background(), id).XApiVersion(xApiVersion).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ManagedServersApi.DeleteManagedServer(context.Background(), id).XApiVersion(xApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ManagedServersApi.DeleteManagedServer``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -122,7 +122,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | [**string**](.md) | ID of the managed server. | 
+**id** | **string** | ID of the managed server. | 
 
 ### Other Parameters
 
@@ -131,7 +131,7 @@ Other parameters are passed through a pointer to a apiDeleteManagedServerRequest
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format: *\\&lt;version\\&gt;-\\&lt;revision\\&gt;*.  | [default to &quot;1.0-rev1&quot;]
+ **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format: *\\&lt;version\\&gt;-\\&lt;revision\\&gt;*.  | [default to &quot;1.0-rev2&quot;]
 
 
 ### Return type
@@ -173,7 +173,7 @@ import (
 )
 
 func main() {
-    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format: *\\<version\\>-\\<revision\\>*.  (default to "1.0-rev1")
+    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format: *\\<version\\>-\\<revision\\>*.  (default to "1.0-rev2")
     skip := int32(56) // int32 | Number of servers to skip. (optional)
     limit := int32(56) // int32 | Maximum number of servers to return. (optional)
     orderColumn := openapiclient.EManagedServersFiltersOrderColumn("Name") // EManagedServersFiltersOrderColumn | Sorts servers by one of the server parameters. (optional)
@@ -183,8 +183,8 @@ func main() {
     viTypeFilter := openapiclient.EViHostType("ESX") // EViHostType | Filters servers by the type of VMware vSphere server. (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ManagedServersApi.GetAllManagedServers(context.Background()).XApiVersion(xApiVersion).Skip(skip).Limit(limit).OrderColumn(orderColumn).OrderAsc(orderAsc).NameFilter(nameFilter).TypeFilter(typeFilter).ViTypeFilter(viTypeFilter).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ManagedServersApi.GetAllManagedServers(context.Background()).XApiVersion(xApiVersion).Skip(skip).Limit(limit).OrderColumn(orderColumn).OrderAsc(orderAsc).NameFilter(nameFilter).TypeFilter(typeFilter).ViTypeFilter(viTypeFilter).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ManagedServersApi.GetAllManagedServers``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -205,7 +205,7 @@ Other parameters are passed through a pointer to a apiGetAllManagedServersReques
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format: *\\&lt;version\\&gt;-\\&lt;revision\\&gt;*.  | [default to &quot;1.0-rev1&quot;]
+ **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format: *\\&lt;version\\&gt;-\\&lt;revision\\&gt;*.  | [default to &quot;1.0-rev2&quot;]
  **skip** | **int32** | Number of servers to skip. | 
  **limit** | **int32** | Maximum number of servers to return. | 
  **orderColumn** | [**EManagedServersFiltersOrderColumn**](EManagedServersFiltersOrderColumn.md) | Sorts servers by one of the server parameters. | 
@@ -253,12 +253,12 @@ import (
 )
 
 func main() {
-    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format: *\\<version\\>-\\<revision\\>*.  (default to "1.0-rev1")
-    id := TODO // string | ID of the managed server.
+    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format: *\\<version\\>-\\<revision\\>*.  (default to "1.0-rev2")
+    id := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | ID of the managed server.
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ManagedServersApi.GetManagedServer(context.Background(), id).XApiVersion(xApiVersion).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ManagedServersApi.GetManagedServer(context.Background(), id).XApiVersion(xApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ManagedServersApi.GetManagedServer``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -274,7 +274,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | [**string**](.md) | ID of the managed server. | 
+**id** | **string** | ID of the managed server. | 
 
 ### Other Parameters
 
@@ -283,7 +283,7 @@ Other parameters are passed through a pointer to a apiGetManagedServerRequest st
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format: *\\&lt;version\\&gt;-\\&lt;revision\\&gt;*.  | [default to &quot;1.0-rev1&quot;]
+ **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format: *\\&lt;version\\&gt;-\\&lt;revision\\&gt;*.  | [default to &quot;1.0-rev2&quot;]
 
 
 ### Return type
@@ -325,13 +325,13 @@ import (
 )
 
 func main() {
-    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format: *\\<version\\>-\\<revision\\>*.  (default to "1.0-rev1")
-    id := TODO // string | ID of the managed server.
-    managedServerModel := *openapiclient.NewManagedServerModel("Id_example", "Name_example", "Description_example", openapiclient.EManagedServerType("WindowsHost"), "CredentialsId_example") // ManagedServerModel | 
+    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format: *\\<version\\>-\\<revision\\>*.  (default to "1.0-rev2")
+    id := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | ID of the managed server.
+    managedServerModel := openapiclient.ManagedServerModel{LinuxHostModel: openapiclient.NewLinuxHostModel(int32(123))} // ManagedServerModel | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ManagedServersApi.UpdateManagedServer(context.Background(), id).XApiVersion(xApiVersion).ManagedServerModel(managedServerModel).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ManagedServersApi.UpdateManagedServer(context.Background(), id).XApiVersion(xApiVersion).ManagedServerModel(managedServerModel).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ManagedServersApi.UpdateManagedServer``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -347,7 +347,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | [**string**](.md) | ID of the managed server. | 
+**id** | **string** | ID of the managed server. | 
 
 ### Other Parameters
 
@@ -356,7 +356,7 @@ Other parameters are passed through a pointer to a apiUpdateManagedServerRequest
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format: *\\&lt;version\\&gt;-\\&lt;revision\\&gt;*.  | [default to &quot;1.0-rev1&quot;]
+ **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format: *\\&lt;version\\&gt;-\\&lt;revision\\&gt;*.  | [default to &quot;1.0-rev2&quot;]
 
  **managedServerModel** | [**ManagedServerModel**](ManagedServerModel.md) |  | 
 

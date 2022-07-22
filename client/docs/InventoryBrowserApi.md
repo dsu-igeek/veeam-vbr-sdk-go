@@ -30,7 +30,7 @@ import (
 )
 
 func main() {
-    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format: *\\<version\\>-\\<revision\\>*.  (default to "1.0-rev1")
+    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format: *\\<version\\>-\\<revision\\>*.  (default to "1.0-rev2")
     skip := int32(56) // int32 | Number of VMware vSphere servers to skip. (optional)
     limit := int32(56) // int32 | Maximum number of VMware vSphere servers to return. (optional)
     orderColumn := openapiclient.EViRootFiltersOrderColumn("Name") // EViRootFiltersOrderColumn | Sorts VMware vSphere servers by one of the VMware vSphere server parameters. (optional)
@@ -38,8 +38,8 @@ func main() {
     nameFilter := "nameFilter_example" // string | Filters VMware vSphere servers by the `nameFilter` pattern. The pattern can match any VMware vSphere server parameter. To substitute one or more characters, use the asterisk (*) character at the beginning and/or at the end. (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.InventoryBrowserApi.GetAllInventoryVmwareHosts(context.Background()).XApiVersion(xApiVersion).Skip(skip).Limit(limit).OrderColumn(orderColumn).OrderAsc(orderAsc).NameFilter(nameFilter).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.InventoryBrowserApi.GetAllInventoryVmwareHosts(context.Background()).XApiVersion(xApiVersion).Skip(skip).Limit(limit).OrderColumn(orderColumn).OrderAsc(orderAsc).NameFilter(nameFilter).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `InventoryBrowserApi.GetAllInventoryVmwareHosts``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -60,7 +60,7 @@ Other parameters are passed through a pointer to a apiGetAllInventoryVmwareHosts
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format: *\\&lt;version\\&gt;-\\&lt;revision\\&gt;*.  | [default to &quot;1.0-rev1&quot;]
+ **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format: *\\&lt;version\\&gt;-\\&lt;revision\\&gt;*.  | [default to &quot;1.0-rev2&quot;]
  **skip** | **int32** | Number of VMware vSphere servers to skip. | 
  **limit** | **int32** | Maximum number of VMware vSphere servers to return. | 
  **orderColumn** | [**EViRootFiltersOrderColumn**](EViRootFiltersOrderColumn.md) | Sorts VMware vSphere servers by one of the VMware vSphere server parameters. | 
@@ -106,7 +106,7 @@ import (
 )
 
 func main() {
-    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format: *\\<version\\>-\\<revision\\>*.  (default to "1.0-rev1")
+    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format: *\\<version\\>-\\<revision\\>*.  (default to "1.0-rev2")
     name := "name_example" // string | Name of the VMware vSphere server.
     skip := int32(56) // int32 | Number of objects to skip. (optional)
     limit := int32(56) // int32 | Maximum number of objects to return. (optional)
@@ -119,8 +119,8 @@ func main() {
     parentContainerNameFilter := "parentContainerNameFilter_example" // string | Filters objects by name of the parent container. (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.InventoryBrowserApi.GetVmwareHostObject(context.Background(), name).XApiVersion(xApiVersion).Skip(skip).Limit(limit).OrderColumn(orderColumn).OrderAsc(orderAsc).ObjectIdFilter(objectIdFilter).HierarchyTypeFilter(hierarchyTypeFilter).NameFilter(nameFilter).TypeFilter(typeFilter).ParentContainerNameFilter(parentContainerNameFilter).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.InventoryBrowserApi.GetVmwareHostObject(context.Background(), name).XApiVersion(xApiVersion).Skip(skip).Limit(limit).OrderColumn(orderColumn).OrderAsc(orderAsc).ObjectIdFilter(objectIdFilter).HierarchyTypeFilter(hierarchyTypeFilter).NameFilter(nameFilter).TypeFilter(typeFilter).ParentContainerNameFilter(parentContainerNameFilter).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `InventoryBrowserApi.GetVmwareHostObject``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -145,7 +145,7 @@ Other parameters are passed through a pointer to a apiGetVmwareHostObjectRequest
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format: *\\&lt;version\\&gt;-\\&lt;revision\\&gt;*.  | [default to &quot;1.0-rev1&quot;]
+ **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format: *\\&lt;version\\&gt;-\\&lt;revision\\&gt;*.  | [default to &quot;1.0-rev2&quot;]
 
  **skip** | **int32** | Number of objects to skip. | 
  **limit** | **int32** | Maximum number of objects to return. | 

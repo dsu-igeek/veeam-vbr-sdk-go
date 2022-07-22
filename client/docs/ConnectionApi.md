@@ -29,12 +29,12 @@ import (
 )
 
 func main() {
-    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format: *\\<version\\>-\\<revision\\>*.  (default to "1.0-rev1")
+    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format: *\\<version\\>-\\<revision\\>*.  (default to "1.0-rev2")
     hostConnectionSpec := *openapiclient.NewHostConnectionSpec("ServerName_example", "CredentialsId_example", openapiclient.EManagedServerType("WindowsHost")) // HostConnectionSpec | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ConnectionApi.GetConnectionCertificate(context.Background()).XApiVersion(xApiVersion).HostConnectionSpec(hostConnectionSpec).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ConnectionApi.GetConnectionCertificate(context.Background()).XApiVersion(xApiVersion).HostConnectionSpec(hostConnectionSpec).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ConnectionApi.GetConnectionCertificate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -55,7 +55,7 @@ Other parameters are passed through a pointer to a apiGetConnectionCertificateRe
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format: *\\&lt;version\\&gt;-\\&lt;revision\\&gt;*.  | [default to &quot;1.0-rev1&quot;]
+ **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format: *\\&lt;version\\&gt;-\\&lt;revision\\&gt;*.  | [default to &quot;1.0-rev2&quot;]
  **hostConnectionSpec** | [**HostConnectionSpec**](HostConnectionSpec.md) |  | 
 
 ### Return type

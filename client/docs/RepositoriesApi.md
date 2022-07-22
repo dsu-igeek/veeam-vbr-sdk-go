@@ -38,12 +38,12 @@ import (
 )
 
 func main() {
-    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format: *\\<version\\>-\\<revision\\>*.  (default to "1.0-rev1")
-    repositorySpec := *openapiclient.NewRepositorySpec("Name_example", "Description_example", openapiclient.ERepositoryType("WinLocal")) // RepositorySpec | 
+    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format: *\\<version\\>-\\<revision\\>*.  (default to "1.0-rev2")
+    repositorySpec := openapiclient.RepositorySpec{LinuxLocalStorageSpec: openapiclient.NewLinuxLocalStorageSpec("HostId_example", *openapiclient.NewLinuxLocalRepositorySettingsModel(), *openapiclient.NewMountServerSettingsModel("MountServerId_example", "WriteCacheFolder_example", false), *openapiclient.NewSmbRepositoryShareSettingsModel("SharePath_example", "CredentialsId_example"))} // RepositorySpec | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.RepositoriesApi.CreateRepository(context.Background()).XApiVersion(xApiVersion).RepositorySpec(repositorySpec).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.RepositoriesApi.CreateRepository(context.Background()).XApiVersion(xApiVersion).RepositorySpec(repositorySpec).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `RepositoriesApi.CreateRepository``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -64,7 +64,7 @@ Other parameters are passed through a pointer to a apiCreateRepositoryRequest st
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format: *\\&lt;version\\&gt;-\\&lt;revision\\&gt;*.  | [default to &quot;1.0-rev1&quot;]
+ **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format: *\\&lt;version\\&gt;-\\&lt;revision\\&gt;*.  | [default to &quot;1.0-rev2&quot;]
  **repositorySpec** | [**RepositorySpec**](RepositorySpec.md) |  | 
 
 ### Return type
@@ -106,13 +106,13 @@ import (
 )
 
 func main() {
-    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format: *\\<version\\>-\\<revision\\>*.  (default to "1.0-rev1")
-    id := TODO // string | ID of the backup repository.
+    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format: *\\<version\\>-\\<revision\\>*.  (default to "1.0-rev2")
+    id := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | ID of the backup repository.
     deleteBackups := true // bool | If *true*, Veeam Backup & Replication will remove backup files. (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.RepositoriesApi.DeleteRepository(context.Background(), id).XApiVersion(xApiVersion).DeleteBackups(deleteBackups).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.RepositoriesApi.DeleteRepository(context.Background(), id).XApiVersion(xApiVersion).DeleteBackups(deleteBackups).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `RepositoriesApi.DeleteRepository``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -128,7 +128,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | [**string**](.md) | ID of the backup repository. | 
+**id** | **string** | ID of the backup repository. | 
 
 ### Other Parameters
 
@@ -137,7 +137,7 @@ Other parameters are passed through a pointer to a apiDeleteRepositoryRequest st
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format: *\\&lt;version\\&gt;-\\&lt;revision\\&gt;*.  | [default to &quot;1.0-rev1&quot;]
+ **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format: *\\&lt;version\\&gt;-\\&lt;revision\\&gt;*.  | [default to &quot;1.0-rev2&quot;]
 
  **deleteBackups** | **bool** | If *true*, Veeam Backup &amp; Replication will remove backup files. | 
 
@@ -180,13 +180,13 @@ import (
 )
 
 func main() {
-    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format: *\\<version\\>-\\<revision\\>*.  (default to "1.0-rev1")
-    id := TODO // string | ID of the scale-out backup repository extent.
+    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format: *\\<version\\>-\\<revision\\>*.  (default to "1.0-rev2")
+    id := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | ID of the scale-out backup repository extent.
     scaleOutExtentMaintenanceSpec := *openapiclient.NewScaleOutExtentMaintenanceSpec([]string{"RepositoryIds_example"}) // ScaleOutExtentMaintenanceSpec | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.RepositoriesApi.DisableScaleOutExtentMaintenanceMode(context.Background(), id).XApiVersion(xApiVersion).ScaleOutExtentMaintenanceSpec(scaleOutExtentMaintenanceSpec).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.RepositoriesApi.DisableScaleOutExtentMaintenanceMode(context.Background(), id).XApiVersion(xApiVersion).ScaleOutExtentMaintenanceSpec(scaleOutExtentMaintenanceSpec).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `RepositoriesApi.DisableScaleOutExtentMaintenanceMode``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -202,7 +202,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | [**string**](.md) | ID of the scale-out backup repository extent. | 
+**id** | **string** | ID of the scale-out backup repository extent. | 
 
 ### Other Parameters
 
@@ -211,7 +211,7 @@ Other parameters are passed through a pointer to a apiDisableScaleOutExtentMaint
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format: *\\&lt;version\\&gt;-\\&lt;revision\\&gt;*.  | [default to &quot;1.0-rev1&quot;]
+ **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format: *\\&lt;version\\&gt;-\\&lt;revision\\&gt;*.  | [default to &quot;1.0-rev2&quot;]
 
  **scaleOutExtentMaintenanceSpec** | [**ScaleOutExtentMaintenanceSpec**](ScaleOutExtentMaintenanceSpec.md) |  | 
 
@@ -254,13 +254,13 @@ import (
 )
 
 func main() {
-    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format: *\\<version\\>-\\<revision\\>*.  (default to "1.0-rev1")
-    id := TODO // string | ID of the scale-out backup repository extent.
+    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format: *\\<version\\>-\\<revision\\>*.  (default to "1.0-rev2")
+    id := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | ID of the scale-out backup repository extent.
     scaleOutExtentMaintenanceSpec := *openapiclient.NewScaleOutExtentMaintenanceSpec([]string{"RepositoryIds_example"}) // ScaleOutExtentMaintenanceSpec | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.RepositoriesApi.EnableScaleOutExtentMaintenanceMode(context.Background(), id).XApiVersion(xApiVersion).ScaleOutExtentMaintenanceSpec(scaleOutExtentMaintenanceSpec).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.RepositoriesApi.EnableScaleOutExtentMaintenanceMode(context.Background(), id).XApiVersion(xApiVersion).ScaleOutExtentMaintenanceSpec(scaleOutExtentMaintenanceSpec).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `RepositoriesApi.EnableScaleOutExtentMaintenanceMode``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -276,7 +276,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | [**string**](.md) | ID of the scale-out backup repository extent. | 
+**id** | **string** | ID of the scale-out backup repository extent. | 
 
 ### Other Parameters
 
@@ -285,7 +285,7 @@ Other parameters are passed through a pointer to a apiEnableScaleOutExtentMainte
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format: *\\&lt;version\\&gt;-\\&lt;revision\\&gt;*.  | [default to &quot;1.0-rev1&quot;]
+ **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format: *\\&lt;version\\&gt;-\\&lt;revision\\&gt;*.  | [default to &quot;1.0-rev2&quot;]
 
  **scaleOutExtentMaintenanceSpec** | [**ScaleOutExtentMaintenanceSpec**](ScaleOutExtentMaintenanceSpec.md) |  | 
 
@@ -309,7 +309,7 @@ Name | Type | Description  | Notes
 
 ## GetAllRepositories
 
-> RepositoriesResult GetAllRepositories(ctx).XApiVersion(xApiVersion).Skip(skip).Limit(limit).OrderColumn(orderColumn).OrderAsc(orderAsc).NameFilter(nameFilter).TypeFilter(typeFilter).HostIdFilter(hostIdFilter).PathFilter(pathFilter).VmbApiFilter(vmbApiFilter).Execute()
+> RepositoriesResult GetAllRepositories(ctx).XApiVersion(xApiVersion).Skip(skip).Limit(limit).OrderColumn(orderColumn).OrderAsc(orderAsc).NameFilter(nameFilter).TypeFilter(typeFilter).HostIdFilter(hostIdFilter).PathFilter(pathFilter).VmbApiFilter(vmbApiFilter).VmbApiPlatform(vmbApiPlatform).Execute()
 
 Get All Repositories
 
@@ -328,20 +328,21 @@ import (
 )
 
 func main() {
-    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format: *\\<version\\>-\\<revision\\>*.  (default to "1.0-rev1")
+    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format: *\\<version\\>-\\<revision\\>*.  (default to "1.0-rev2")
     skip := int32(56) // int32 | Number of repositories to skip. (optional)
     limit := int32(56) // int32 | Maximum number of repositories to return. (optional)
     orderColumn := openapiclient.ERepositoryFiltersOrderColumn("Name") // ERepositoryFiltersOrderColumn | Sorts repositories by one of the repository parameters. (optional)
     orderAsc := true // bool | Sorts repositories in the ascending order by the `orderColumn` parameter. (optional)
     nameFilter := "nameFilter_example" // string | Filters repositories by the `nameFilter` pattern. The pattern can match any repository parameter. To substitute one or more characters, use the asterisk (*) character at the beginning and/or at the end. (optional)
     typeFilter := openapiclient.ERepositoryType("WinLocal") // ERepositoryType | Filters repositories by repository type. (optional)
-    hostIdFilter := TODO // string | Filters repositories by ID of the backup server. (optional)
+    hostIdFilter := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | Filters repositories by ID of the backup server. (optional)
     pathFilter := "pathFilter_example" // string | Filters repositories by path to the folder where backup files are stored. (optional)
-    vmbApiFilter := "vmbApiFilter_example" // string | Filters repositories by VM Backup API parameters converted to the base64 string.<br> To compose the base64 string:<br> <ol>   <li>Prepare VM Backup API parameters in the JSON format.</li>   <code>{<br>   \"protocolVersion\":\"string\",<br>   \"assemblyVersion\":\"string\",<br>   \"productId\":\"string\",<br>   \"versionFlags\":\"string\"<br>   }<br></code>   <li>Convert the JSON object into a string.</li>   <li>Encode the string with base64 encoding.</li> </ol>  (optional)
+    vmbApiFilter := "vmbApiFilter_example" // string | Filters repositories by VM Backup API parameters converted to the base64 string.<br>  (optional)
+    vmbApiPlatform := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | TODO Sets a platform for vmb API to work with (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.RepositoriesApi.GetAllRepositories(context.Background()).XApiVersion(xApiVersion).Skip(skip).Limit(limit).OrderColumn(orderColumn).OrderAsc(orderAsc).NameFilter(nameFilter).TypeFilter(typeFilter).HostIdFilter(hostIdFilter).PathFilter(pathFilter).VmbApiFilter(vmbApiFilter).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.RepositoriesApi.GetAllRepositories(context.Background()).XApiVersion(xApiVersion).Skip(skip).Limit(limit).OrderColumn(orderColumn).OrderAsc(orderAsc).NameFilter(nameFilter).TypeFilter(typeFilter).HostIdFilter(hostIdFilter).PathFilter(pathFilter).VmbApiFilter(vmbApiFilter).VmbApiPlatform(vmbApiPlatform).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `RepositoriesApi.GetAllRepositories``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -362,16 +363,17 @@ Other parameters are passed through a pointer to a apiGetAllRepositoriesRequest 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format: *\\&lt;version\\&gt;-\\&lt;revision\\&gt;*.  | [default to &quot;1.0-rev1&quot;]
+ **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format: *\\&lt;version\\&gt;-\\&lt;revision\\&gt;*.  | [default to &quot;1.0-rev2&quot;]
  **skip** | **int32** | Number of repositories to skip. | 
  **limit** | **int32** | Maximum number of repositories to return. | 
  **orderColumn** | [**ERepositoryFiltersOrderColumn**](ERepositoryFiltersOrderColumn.md) | Sorts repositories by one of the repository parameters. | 
  **orderAsc** | **bool** | Sorts repositories in the ascending order by the &#x60;orderColumn&#x60; parameter. | 
  **nameFilter** | **string** | Filters repositories by the &#x60;nameFilter&#x60; pattern. The pattern can match any repository parameter. To substitute one or more characters, use the asterisk (*) character at the beginning and/or at the end. | 
  **typeFilter** | [**ERepositoryType**](ERepositoryType.md) | Filters repositories by repository type. | 
- **hostIdFilter** | [**string**](string.md) | Filters repositories by ID of the backup server. | 
+ **hostIdFilter** | **string** | Filters repositories by ID of the backup server. | 
  **pathFilter** | **string** | Filters repositories by path to the folder where backup files are stored. | 
- **vmbApiFilter** | **string** | Filters repositories by VM Backup API parameters converted to the base64 string.&lt;br&gt; To compose the base64 string:&lt;br&gt; &lt;ol&gt;   &lt;li&gt;Prepare VM Backup API parameters in the JSON format.&lt;/li&gt;   &lt;code&gt;{&lt;br&gt;   \&quot;protocolVersion\&quot;:\&quot;string\&quot;,&lt;br&gt;   \&quot;assemblyVersion\&quot;:\&quot;string\&quot;,&lt;br&gt;   \&quot;productId\&quot;:\&quot;string\&quot;,&lt;br&gt;   \&quot;versionFlags\&quot;:\&quot;string\&quot;&lt;br&gt;   }&lt;br&gt;&lt;/code&gt;   &lt;li&gt;Convert the JSON object into a string.&lt;/li&gt;   &lt;li&gt;Encode the string with base64 encoding.&lt;/li&gt; &lt;/ol&gt;  | 
+ **vmbApiFilter** | **string** | Filters repositories by VM Backup API parameters converted to the base64 string.&lt;br&gt;  | 
+ **vmbApiPlatform** | **string** | TODO Sets a platform for vmb API to work with | 
 
 ### Return type
 
@@ -412,12 +414,12 @@ import (
 )
 
 func main() {
-    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format: *\\<version\\>-\\<revision\\>*.  (default to "1.0-rev1")
+    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format: *\\<version\\>-\\<revision\\>*.  (default to "1.0-rev2")
     skip := int32(56) // int32 | Number of repository states to skip. (optional)
     limit := int32(56) // int32 | Maximum number of repository states to return. (optional)
     orderColumn := openapiclient.ERepositoryStatesFiltersOrderColumn("Name") // ERepositoryStatesFiltersOrderColumn | Sorts repository states by one of the state parameters. (optional)
     orderAsc := true // bool | Sorts repository states in the ascending order by the `orderColumn` parameter. (optional)
-    idFilter := TODO // string | Filters repository states by repository ID. (optional)
+    idFilter := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | Filters repository states by repository ID. (optional)
     nameFilter := "nameFilter_example" // string | Filters repository states by the `nameFilter` pattern. The pattern can match any repository state parameter. To substitute one or more characters, use the asterisk (*) character at the beginning and/or at the end. (optional)
     typeFilter := openapiclient.ERepositoryType("WinLocal") // ERepositoryType | Filters repository states by repository type. (optional)
     capacityFilter := float64(1.2) // float64 | Filters repository states by repository capacity. (optional)
@@ -425,8 +427,8 @@ func main() {
     usedSpaceFilter := float64(1.2) // float64 | Filters repository states by repository used space. (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.RepositoriesApi.GetAllRepositoriesStates(context.Background()).XApiVersion(xApiVersion).Skip(skip).Limit(limit).OrderColumn(orderColumn).OrderAsc(orderAsc).IdFilter(idFilter).NameFilter(nameFilter).TypeFilter(typeFilter).CapacityFilter(capacityFilter).FreeSpaceFilter(freeSpaceFilter).UsedSpaceFilter(usedSpaceFilter).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.RepositoriesApi.GetAllRepositoriesStates(context.Background()).XApiVersion(xApiVersion).Skip(skip).Limit(limit).OrderColumn(orderColumn).OrderAsc(orderAsc).IdFilter(idFilter).NameFilter(nameFilter).TypeFilter(typeFilter).CapacityFilter(capacityFilter).FreeSpaceFilter(freeSpaceFilter).UsedSpaceFilter(usedSpaceFilter).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `RepositoriesApi.GetAllRepositoriesStates``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -447,12 +449,12 @@ Other parameters are passed through a pointer to a apiGetAllRepositoriesStatesRe
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format: *\\&lt;version\\&gt;-\\&lt;revision\\&gt;*.  | [default to &quot;1.0-rev1&quot;]
+ **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format: *\\&lt;version\\&gt;-\\&lt;revision\\&gt;*.  | [default to &quot;1.0-rev2&quot;]
  **skip** | **int32** | Number of repository states to skip. | 
  **limit** | **int32** | Maximum number of repository states to return. | 
  **orderColumn** | [**ERepositoryStatesFiltersOrderColumn**](ERepositoryStatesFiltersOrderColumn.md) | Sorts repository states by one of the state parameters. | 
  **orderAsc** | **bool** | Sorts repository states in the ascending order by the &#x60;orderColumn&#x60; parameter. | 
- **idFilter** | [**string**](string.md) | Filters repository states by repository ID. | 
+ **idFilter** | **string** | Filters repository states by repository ID. | 
  **nameFilter** | **string** | Filters repository states by the &#x60;nameFilter&#x60; pattern. The pattern can match any repository state parameter. To substitute one or more characters, use the asterisk (*) character at the beginning and/or at the end. | 
  **typeFilter** | [**ERepositoryType**](ERepositoryType.md) | Filters repository states by repository type. | 
  **capacityFilter** | **float64** | Filters repository states by repository capacity. | 
@@ -498,7 +500,7 @@ import (
 )
 
 func main() {
-    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format: *\\<version\\>-\\<revision\\>*.  (default to "1.0-rev1")
+    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format: *\\<version\\>-\\<revision\\>*.  (default to "1.0-rev2")
     skip := int32(56) // int32 | Number of repositories to skip. (optional)
     limit := int32(56) // int32 | Maximum number of repositories to return. (optional)
     orderColumn := openapiclient.EScaleOutRepositoryFiltersOrderColumn("Name") // EScaleOutRepositoryFiltersOrderColumn | Sorts repositories by one of the repository parameters. (optional)
@@ -506,8 +508,8 @@ func main() {
     nameFilter := "nameFilter_example" // string | Filters repositories by the `nameFilter` substring. The substring can be part of any repository parameter. (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.RepositoriesApi.GetAllScaleOutRepositories(context.Background()).XApiVersion(xApiVersion).Skip(skip).Limit(limit).OrderColumn(orderColumn).OrderAsc(orderAsc).NameFilter(nameFilter).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.RepositoriesApi.GetAllScaleOutRepositories(context.Background()).XApiVersion(xApiVersion).Skip(skip).Limit(limit).OrderColumn(orderColumn).OrderAsc(orderAsc).NameFilter(nameFilter).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `RepositoriesApi.GetAllScaleOutRepositories``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -528,7 +530,7 @@ Other parameters are passed through a pointer to a apiGetAllScaleOutRepositories
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format: *\\&lt;version\\&gt;-\\&lt;revision\\&gt;*.  | [default to &quot;1.0-rev1&quot;]
+ **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format: *\\&lt;version\\&gt;-\\&lt;revision\\&gt;*.  | [default to &quot;1.0-rev2&quot;]
  **skip** | **int32** | Number of repositories to skip. | 
  **limit** | **int32** | Maximum number of repositories to return. | 
  **orderColumn** | [**EScaleOutRepositoryFiltersOrderColumn**](EScaleOutRepositoryFiltersOrderColumn.md) | Sorts repositories by one of the repository parameters. | 
@@ -574,12 +576,12 @@ import (
 )
 
 func main() {
-    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format: *\\<version\\>-\\<revision\\>*.  (default to "1.0-rev1")
-    id := TODO // string | ID of the backup repository.
+    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format: *\\<version\\>-\\<revision\\>*.  (default to "1.0-rev2")
+    id := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | ID of the backup repository.
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.RepositoriesApi.GetRepository(context.Background(), id).XApiVersion(xApiVersion).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.RepositoriesApi.GetRepository(context.Background(), id).XApiVersion(xApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `RepositoriesApi.GetRepository``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -595,7 +597,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | [**string**](.md) | ID of the backup repository. | 
+**id** | **string** | ID of the backup repository. | 
 
 ### Other Parameters
 
@@ -604,7 +606,7 @@ Other parameters are passed through a pointer to a apiGetRepositoryRequest struc
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format: *\\&lt;version\\&gt;-\\&lt;revision\\&gt;*.  | [default to &quot;1.0-rev1&quot;]
+ **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format: *\\&lt;version\\&gt;-\\&lt;revision\\&gt;*.  | [default to &quot;1.0-rev2&quot;]
 
 
 ### Return type
@@ -646,12 +648,12 @@ import (
 )
 
 func main() {
-    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format: *\\<version\\>-\\<revision\\>*.  (default to "1.0-rev1")
-    id := TODO // string | ID of the scale-out backup repository.
+    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format: *\\<version\\>-\\<revision\\>*.  (default to "1.0-rev2")
+    id := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | ID of the scale-out backup repository.
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.RepositoriesApi.GetScaleOutRepository(context.Background(), id).XApiVersion(xApiVersion).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.RepositoriesApi.GetScaleOutRepository(context.Background(), id).XApiVersion(xApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `RepositoriesApi.GetScaleOutRepository``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -667,7 +669,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | [**string**](.md) | ID of the scale-out backup repository. | 
+**id** | **string** | ID of the scale-out backup repository. | 
 
 ### Other Parameters
 
@@ -676,7 +678,7 @@ Other parameters are passed through a pointer to a apiGetScaleOutRepositoryReque
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format: *\\&lt;version\\&gt;-\\&lt;revision\\&gt;*.  | [default to &quot;1.0-rev1&quot;]
+ **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format: *\\&lt;version\\&gt;-\\&lt;revision\\&gt;*.  | [default to &quot;1.0-rev2&quot;]
 
 
 ### Return type
@@ -718,13 +720,13 @@ import (
 )
 
 func main() {
-    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format: *\\<version\\>-\\<revision\\>*.  (default to "1.0-rev1")
-    id := TODO // string | ID of the backup repository.
-    repositoryModel := *openapiclient.NewRepositoryModel("Id_example", "Name_example", "Description_example", openapiclient.ERepositoryType("WinLocal")) // RepositoryModel | 
+    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format: *\\<version\\>-\\<revision\\>*.  (default to "1.0-rev2")
+    id := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | ID of the backup repository.
+    repositoryModel := openapiclient.RepositoryModel{LinuxLocalStorageModel: openapiclient.NewLinuxLocalStorageModel("HostId_example", *openapiclient.NewLinuxLocalRepositorySettingsModel(), *openapiclient.NewMountServerSettingsModel("MountServerId_example", "WriteCacheFolder_example", false), *openapiclient.NewSmbRepositoryShareSettingsModel("SharePath_example", "CredentialsId_example"))} // RepositoryModel | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.RepositoriesApi.UpdateRepository(context.Background(), id).XApiVersion(xApiVersion).RepositoryModel(repositoryModel).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.RepositoriesApi.UpdateRepository(context.Background(), id).XApiVersion(xApiVersion).RepositoryModel(repositoryModel).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `RepositoriesApi.UpdateRepository``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -740,7 +742,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | [**string**](.md) | ID of the backup repository. | 
+**id** | **string** | ID of the backup repository. | 
 
 ### Other Parameters
 
@@ -749,7 +751,7 @@ Other parameters are passed through a pointer to a apiUpdateRepositoryRequest st
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format: *\\&lt;version\\&gt;-\\&lt;revision\\&gt;*.  | [default to &quot;1.0-rev1&quot;]
+ **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format: *\\&lt;version\\&gt;-\\&lt;revision\\&gt;*.  | [default to &quot;1.0-rev2&quot;]
 
  **repositoryModel** | [**RepositoryModel**](RepositoryModel.md) |  | 
 

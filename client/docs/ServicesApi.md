@@ -29,7 +29,7 @@ import (
 )
 
 func main() {
-    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format: *\\<version\\>-\\<revision\\>*.  (default to "1.0-rev1")
+    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format: *\\<version\\>-\\<revision\\>*.  (default to "1.0-rev2")
     skip := int32(56) // int32 | Number of services to skip. (optional)
     limit := int32(56) // int32 | Maximum number of services to return. (optional)
     orderColumn := openapiclient.EServicesFiltersOrderColumn("Name") // EServicesFiltersOrderColumn | Sorts services by one of the service parameters. (optional)
@@ -37,8 +37,8 @@ func main() {
     nameFilter := "nameFilter_example" // string | Filters services by the `nameFilter` pattern. The pattern can match any service parameter. To substitute one or more characters, use the asterisk (*) character at the beginning and/or at the end. (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ServicesApi.GetAllServices(context.Background()).XApiVersion(xApiVersion).Skip(skip).Limit(limit).OrderColumn(orderColumn).OrderAsc(orderAsc).NameFilter(nameFilter).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ServicesApi.GetAllServices(context.Background()).XApiVersion(xApiVersion).Skip(skip).Limit(limit).OrderColumn(orderColumn).OrderAsc(orderAsc).NameFilter(nameFilter).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ServicesApi.GetAllServices``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -59,7 +59,7 @@ Other parameters are passed through a pointer to a apiGetAllServicesRequest stru
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format: *\\&lt;version\\&gt;-\\&lt;revision\\&gt;*.  | [default to &quot;1.0-rev1&quot;]
+ **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format: *\\&lt;version\\&gt;-\\&lt;revision\\&gt;*.  | [default to &quot;1.0-rev2&quot;]
  **skip** | **int32** | Number of services to skip. | 
  **limit** | **int32** | Maximum number of services to return. | 
  **orderColumn** | [**EServicesFiltersOrderColumn**](EServicesFiltersOrderColumn.md) | Sorts services by one of the service parameters. | 

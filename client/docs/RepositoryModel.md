@@ -9,12 +9,16 @@ Name | Type | Description | Notes
 **Description** | **string** | Description of the backup repository. | 
 **Tag** | Pointer to **string** | VMware vSphere tag assigned to the backup repository. | [optional] 
 **Type** | [**ERepositoryType**](ERepositoryType.md) |  | 
+**HostId** | **string** | ID of the server that is used as a backup repository. | 
+**Repository** | [**NetworkRepositorySettingsModel**](NetworkRepositorySettingsModel.md) |  | 
+**MountServer** | [**MountServerSettingsModel**](MountServerSettingsModel.md) |  | 
+**Share** | [**SmbRepositoryShareSettingsModel**](SmbRepositoryShareSettingsModel.md) |  | 
 
 ## Methods
 
 ### NewRepositoryModel
 
-`func NewRepositoryModel(id string, name string, description string, type_ ERepositoryType, ) *RepositoryModel`
+`func NewRepositoryModel(id string, name string, description string, type_ ERepositoryType, hostId string, repository NetworkRepositorySettingsModel, mountServer MountServerSettingsModel, share SmbRepositoryShareSettingsModel, ) *RepositoryModel`
 
 NewRepositoryModel instantiates a new RepositoryModel object
 This constructor will assign default values to properties that have it defined,
@@ -132,6 +136,86 @@ and a boolean to check if the value has been set.
 `func (o *RepositoryModel) SetType(v ERepositoryType)`
 
 SetType sets Type field to given value.
+
+
+### GetHostId
+
+`func (o *RepositoryModel) GetHostId() string`
+
+GetHostId returns the HostId field if non-nil, zero value otherwise.
+
+### GetHostIdOk
+
+`func (o *RepositoryModel) GetHostIdOk() (*string, bool)`
+
+GetHostIdOk returns a tuple with the HostId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetHostId
+
+`func (o *RepositoryModel) SetHostId(v string)`
+
+SetHostId sets HostId field to given value.
+
+
+### GetRepository
+
+`func (o *RepositoryModel) GetRepository() NetworkRepositorySettingsModel`
+
+GetRepository returns the Repository field if non-nil, zero value otherwise.
+
+### GetRepositoryOk
+
+`func (o *RepositoryModel) GetRepositoryOk() (*NetworkRepositorySettingsModel, bool)`
+
+GetRepositoryOk returns a tuple with the Repository field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRepository
+
+`func (o *RepositoryModel) SetRepository(v NetworkRepositorySettingsModel)`
+
+SetRepository sets Repository field to given value.
+
+
+### GetMountServer
+
+`func (o *RepositoryModel) GetMountServer() MountServerSettingsModel`
+
+GetMountServer returns the MountServer field if non-nil, zero value otherwise.
+
+### GetMountServerOk
+
+`func (o *RepositoryModel) GetMountServerOk() (*MountServerSettingsModel, bool)`
+
+GetMountServerOk returns a tuple with the MountServer field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMountServer
+
+`func (o *RepositoryModel) SetMountServer(v MountServerSettingsModel)`
+
+SetMountServer sets MountServer field to given value.
+
+
+### GetShare
+
+`func (o *RepositoryModel) GetShare() SmbRepositoryShareSettingsModel`
+
+GetShare returns the Share field if non-nil, zero value otherwise.
+
+### GetShareOk
+
+`func (o *RepositoryModel) GetShareOk() (*SmbRepositoryShareSettingsModel, bool)`
+
+GetShareOk returns a tuple with the Share field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetShare
+
+`func (o *RepositoryModel) SetShare(v SmbRepositoryShareSettingsModel)`
+
+SetShare sets Share field to given value.
 
 
 
